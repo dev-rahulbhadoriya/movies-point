@@ -6,11 +6,11 @@ export const AllRoutes = () => {
     return (
         <div className="dark:bg-slate-800">
             <Routes>
-                <Route path="/" element={<MoviesList />} />
+                <Route path="/" element={<MoviesList  apiPath="movie/now_playing"/>} />
                 <Route path="/movie/:id" element={<MovieDetails />} />
-                <Route path="/movies/populer" element={<MovieDetails />} />
-                <Route path="/movies/top" element={<MovieDetails />} />
-                <Route path="/movies/upcoming" element={<MovieDetails />} />
+                <Route path="/movies/popular" element={<MoviesList apiPath="movie/popular" />} />
+                <Route path="/movies/top" element={<MoviesList apiPath="movie/top_rated" />} />
+                <Route path="/movies/upcoming" element={<MoviesList apiPath="movie/upcoming" />} />
                 <Route path="/movies/search" element={<Search />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
